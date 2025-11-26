@@ -38,11 +38,21 @@ namespace CustomTextBoxControl.View.UserControls
 		{
 			tbPlaceHolder.Visibility = txtInput.Text == "" ? Visibility.Visible : Visibility.Hidden;
 			//if (txtInput.Text.Length > 16) txtInput.Text = txtInput.Text.Substring(0, 16);
+			
         }
 
 		private void btnClear_Click(object sender, RoutedEventArgs e)
 		{
 			txtInput.Text = "";
+		}
+
+		private void txtInput_KeyDown(object sender, KeyEventArgs e)
+		{
+			if(e.Key == Key.Enter)
+			{
+				TraversalRequest tr = new TraversalRequest(FocusNavigationDirection.Down);
+				(sender as Control).MoveFocus(tr);
+			}
 		}
 	}
 }

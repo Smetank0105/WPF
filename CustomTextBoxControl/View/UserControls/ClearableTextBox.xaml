@@ -12,6 +12,7 @@
                  TextChanged="txtInput_TextChanged"
                  VerticalContentAlignment="Center"
                  Background="Transparent"
+                 KeyDown="txtInput_KeyDown"
                  />
         <TextBlock Name="tbPlaceHolder" Text="Placeholder"
                    FontWeight="Light" Foreground="DarkGray"
