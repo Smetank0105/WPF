@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF_HW1", "WPF_HW1\WPF_HW1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuBar", "MenuBar\MenuBar.csproj", "{EB563933-C1A5-40FB-BF25-3D3E80A0A9BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTextBoxControl", "CustomTextBoxControl\CustomTextBoxControl.csproj", "{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{EB563933-C1A5-40FB-BF25-3D3E80A0A9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB563933-C1A5-40FB-BF25-3D3E80A0A9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB563933-C1A5-40FB-BF25-3D3E80A0A9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
