@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuBar", "MenuBar\MenuBar.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTextBoxControl", "CustomTextBoxControl\CustomTextBoxControl.csproj", "{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Binding", "Binding\Binding.csproj", "{4C8C3B8B-9BFB-406D-B2DE-98969CB05188}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8D352B6-C64D-4FBD-B3AC-949BA2AA0F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C8C3B8B-9BFB-406D-B2DE-98969CB05188}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C8C3B8B-9BFB-406D-B2DE-98969CB05188}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C8C3B8B-9BFB-406D-B2DE-98969CB05188}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C8C3B8B-9BFB-406D-B2DE-98969CB05188}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
