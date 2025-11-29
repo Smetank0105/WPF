@@ -24,5 +24,10 @@ namespace IPAddress
 		{
 			InitializeComponent();
 		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			txtIP.Text = IPControl.GetIPAddress();
+		}
 	}
 }
