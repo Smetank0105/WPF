@@ -24,6 +24,9 @@ namespace IPAddress
 		private static extern IntPtr SendMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam);
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetModuleHandle(string lpModuleName);
+		[DllImport("kernel32.dll")]
+		private static extern int GetLastError();
+
 		[DllImport("comctl32.dll")]
 		private static extern bool InitCommonControls();
 
@@ -65,7 +68,11 @@ namespace IPAddress
 		{
 			if(hControl == IntPtr.Zero)
 				return string.Empty;
-			IntPtr result = SendMessage(hControl, IPM_GETADDRESS, IntPtr.Zero, IntPtr.Zero);
+			IntPtr result = Marshal.AllocHGlobal(4);
+			
+			SendMessage(hControl, IPM_GETADDRESS, IntPtr.Zero, result);
+			int dw_ID = GetLastError();
+			//uint address = (uint)Marshal.ReadInt32(result);
 			uint address = (uint)result.ToInt32();
 
 			byte a = (byte)((address >> 24) & 0xFF);
