@@ -13,6 +13,7 @@ namespace IPAddress
 	internal class IPAddressControl : HwndHost
 	{
 		private IntPtr hControl;
+
 		[DllImport("user32.dll", CharSet = CharSet.Auto)]
 		private static extern IntPtr CreateWindowEx
 			(int dwExStyle, string lpszClassName, string lpszWindowName, 
@@ -20,8 +21,7 @@ namespace IPAddress
 			IntPtr hParent, IntPtr hMenu, IntPtr hInst, IntPtr pvParam);
 		[DllImport("user32.dll")]
 		private static extern bool DestroyWindow(IntPtr hwnd);
-		[DllImport("user32.dll", CharSet = CharSet.Auto)]
-		private static extern IntPtr SendMessage(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam);
+
 		[DllImport("kernel32.dll")]
 		private static extern IntPtr GetModuleHandle(string lpModuleName);
 		[DllImport("kernel32.dll")]
@@ -30,10 +30,15 @@ namespace IPAddress
 		[DllImport("comctl32.dll")]
 		private static extern bool InitCommonControls();
 
+		[DllImport("D:\\Repository\\WPF\\x64\\Debug\\IPLib.dll")]//, CallingConvention = CallingConvention.Cdecl)]
+		private static extern IntPtr GetIpAddress(IntPtr hWnd);
+
+		[DllImport("D:\\Repository\\WPF\\x64\\Debug\\IPLib.dll")]//, CallingConvention = CallingConvention.Cdecl)]
+		private static extern bool SetIpAddress(IntPtr hWnd, IntPtr ipAddress);
+
 		private const string WC_IPADDRESS = "SysIPAddress32";
 		private const int WS_CHILD = 0x40000000;
 		private const int WS_VISIBLE = 0x10000000;
-		private const int IPM_GETADDRESS = 0x0467;
 
 		protected override HandleRef BuildWindowCore(HandleRef hParent)
 		{
@@ -64,15 +69,14 @@ namespace IPAddress
 		{
 			return base.WndProc(hwnd, msg, wParam, lParam, ref handled);
 		}
-		public string GetIPAddress()
+		public string GetIPString()
 		{
 			if(hControl == IntPtr.Zero)
 				return string.Empty;
-			IntPtr result = Marshal.AllocHGlobal(4);
-			
-			SendMessage(hControl, IPM_GETADDRESS, IntPtr.Zero, result);
-			int dw_ID = GetLastError();
-			//uint address = (uint)Marshal.ReadInt32(result);
+
+			//int result = GetIpAddress(hControl);
+			//uint address = (uint)result;
+			IntPtr result = GetIpAddress(hControl);
 			uint address = (uint)result.ToInt32();
 
 			byte a = (byte)((address >> 24) & 0xFF);
@@ -82,7 +86,7 @@ namespace IPAddress
 
 			return $"{a}.{b}.{c}.{d}";
 		}
-		public void SetIPAddress(string ip)
+		public void SetIPString(string ip)
 		{
 
 		}
